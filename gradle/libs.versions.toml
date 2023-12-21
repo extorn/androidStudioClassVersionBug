@@ -1,0 +1,24 @@
+# See this website for automatic updating of version numbers:
+# https://github.com/littlerobots/version-catalog-update-plugin
+[versions]
+# these are versions used by the gradle files to control class building
+target_sdk_version = "34"
+compile_sdk_version = "34"
+min_sdk_version = "26"
+# These are library and plugin versions
+agp = "8.2.0"
+appcompat = "1.6.1"
+coreKtx = "1.12.0"
+kotlin = "1.9.10"
+kspPluginVersion = "1.9.10-1.0.13" # NOTE this limits the kotlin version
+navigationFrameworkVersion = "2.7.6"
+[libraries]
+appcompat = { module = "androidx.appcompat:appcompat", version.ref = "appcompat" }
+core_ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
+[plugins]
+navigation_safe_args = { id = "androidx.navigation.safeargs.kotlin", version.ref = "navigationFrameworkVersion" }
+ksp = {id="com.google.devtools.ksp", version.ref= "kspPluginVersion"}
+kotlin_android = {id="org.jetbrains.kotlin.android", version.ref= "kotlin"}
+kotlin_jvm = {id="org.jetbrains.kotlin.jvm", version.ref= "kotlin"}
+android_application = { id = "com.android.application", version.ref = "agp" }
+android_library = { id = "com.android.library", version.ref = "agp" }
